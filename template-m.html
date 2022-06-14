@@ -1,0 +1,34 @@
+<!-- SuuntoPlus: Medium display -->
+<uiView>
+
+  <div id="suuntoplus">
+
+    <!-- Topmost: title field -->
+    <div class="cm-fg" style="width:100%;height:56px;">
+      <div id="z{zapp_index}-v{view_index}-t0" style="top:16px;left:calc(50% - 50%e);font-size:25px;max-height:34px;max-width:170px;">Everest</div>
+    </div>
+
+    <!-- Field just under the title, left side -->
+    <!-- Field title -->
+    <div class="cm-mid" optional style="font-size:25px;top:58px;left:calc(160px - 5px - 100%e);width:120px;max-height:34px;text-align:center;">Remaining</div>
+    <!-- Field value -->
+    <div style="font-size:50px;top:80px;left:calc(160px - 5px - 100%e);width:115px;text-align:center;font-family:monospace numbers;">
+      <!-- Eval element is replaced by the value from the input resource. This uses a resource that was created by the Zapp and is _not_ native to the watch. -->
+      <eval input="/Zapp/{zapp_index}/Output/remainingAscent" outputFormat="Count_Fourdigits" default="--"/>
+    </div>
+
+    <!-- Field just under the title, right side -->
+    <!-- Field title -->
+    <div class="cm-mid" optional style="font-size:25px;top:58px;left:165px;width:120px;max-height:34px;text-align:center;">Duration</div>
+    <!-- Field value -->
+    <div style="font-size:50px;top:80px;left:165px;width:115px;text-align:center;font-family:monospace numbers;">
+      <!-- Eval element is replaced by the value from the input resource from the native duration resource. -->
+      <eval input="/Activity/Move/-1/Duration/Current" outputFormat="Duration_FourdigitsFixed" default="--" />
+    </div>
+
+    <!-- Bottom text area -->
+    <div style="font-size:25px;top:calc(70% - 50%e);left:calc(50% - 50%e);width:75%;max-height:120px;text-align:center;">Keep climbing!</div>
+
+  </div>
+
+</uiView>

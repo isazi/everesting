@@ -1,0 +1,32 @@
+{
+  "name": "Everest",
+  "version": "1.0",
+  "author": "Alessio Sclocco",
+  "description": "Everesting app.",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1655144065,
+  "in": [
+    {
+      "name": "ascent",
+      "source": "Activity/Move/-1/Ascent/Current",
+      "type": "subscribe"
+    }
+  ],
+  "out": [
+    {
+      "name": "remainingAscent"
+    }
+  ],
+  "template": [
+    {
+      "name": "template-s.html"
+    },
+    {
+      "name": "template-m.html"
+    },
+    {
+      "name": "template-l.html"
+    }
+  ]
+}
