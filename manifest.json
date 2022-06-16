@@ -1,8 +1,8 @@
 {
-  "name": "Everest",
-  "version": "1.0",
+  "name": "Everesting",
+  "version": "2.0",
   "author": "Alessio Sclocco",
-  "description": "Everesting app.",
+  "description": "Everesting app",
   "type": "feature",
   "usage": "workout",
   "modificationTime": 1655144065,
@@ -11,6 +11,11 @@
       "name": "ascent",
       "source": "Activity/Move/-1/Ascent/Current",
       "type": "subscribe"
+    },
+    {
+      "name": "unit",
+      "source": "Settings/Unit/UnitsMode",
+      "type": "get"
     }
   ],
   "out": [

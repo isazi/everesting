@@ -12,15 +12,22 @@ function evaluate(input, output)
     return;
   }
   ascentDiff = input.ascent - previousAscent;
-  if ( (ascentDiff > 0) && (output.remainingAscent > 0) ) {
-    output.remainingAscent = output.remainingAscent - ascentDiff;
-    previousAscent = input.ascent;
+  if ( (ascentDiff == 0) && (output.remainingAscent <= 0) ) {
+    return;
   }
+  output.remainingAscent = output.remainingAscent - ascentDiff;
+  previousAscent = input.ascent;
 }
 
 function onLoad(input, output)
 {
-  output.remainingAscent = 8848.86;
+  if ( input.unit == 0 ){
+    output.remainingAscent = 8848.86;
+  }
+  else
+  {
+    output.remainingAscent = 29031.7;
+  }
 }
 
 function onExerciseStart()
@@ -66,7 +73,7 @@ function getSummaryOutputs(input, output)
 {
   return [{
     id: "myzapp01.remainingAscent",
-    name: "Remaining ascent to Everest",
+    name: "Remaining ascent",
     format: "Count_Fourdigits",
     value: output.remainingAscent
   }];
