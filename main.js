@@ -21,6 +21,13 @@ function evaluate(input, output)
 
 function onLoad(input, output)
 {
+  isPaused = true;
+  output.remainingAscent = 0;
+  previousAscent = 0;
+}
+
+function onExerciseStart()
+{
   if ( input.unit == 0 ){
     output.remainingAscent = 8848.86;
   }
@@ -28,12 +35,7 @@ function onLoad(input, output)
   {
     output.remainingAscent = 29031.7;
   }
-}
-
-function onExerciseStart()
-{
   isPaused = false;
-  previousAscent = 0.0;
 }
 
 function onExercisePause()
@@ -58,7 +60,7 @@ function getSummaryOutputs(input, output)
   return [{
     id: "myzapp01.remainingAscent",
     name: "Remaining ascent",
-    format: "Count_Fourdigits",
+    format: "Count_Sixdigits",
     value: output.remainingAscent
   }];
 }
